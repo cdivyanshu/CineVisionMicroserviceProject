@@ -2,17 +2,6 @@ pipeline {
     agent any
 
     environment {
-        HARBOR_URL = '10.10.41.8'
-        no_proxy = "localhost,127.0.0.1,10.10.41.8"
-        HARBOR_PROTOCOL = 'http'
-        HARBOR_PORT = '80'
-        Harbor_cred = 'divyanshu_harbor'
-        HARBOR_PROJECT = 'cinevisionmicroservice'
-        HARBOR_REGISTRY = "${HARBOR_PROTOCOL}://${HARBOR_URL}:${HARBOR_PORT}"
-        IMAGE_BASE_PATH = "${HARBOR_URL}:${HARBOR_PORT}/${HARBOR_PROJECT}"
-        REPO_URL = 'https://github.com/cdivyanshu/CineVisionMicroserviceProject.git'
-        GIT_CREDENTIALS_ID = 'divyanshu-tts'
-        KUBECONFIG = credentials('kube-cred')
     }
 
     parameters {
